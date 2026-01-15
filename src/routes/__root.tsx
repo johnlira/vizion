@@ -1,5 +1,6 @@
 import { Outlet, createRootRoute } from '@tanstack/react-router'
 import { UserProvider } from '@/contexts/user-context'
+import { ImagesProvider } from '@/contexts/images-context'
 
 export const Route = createRootRoute({
   component: RootComponent,
@@ -8,7 +9,9 @@ export const Route = createRootRoute({
 function RootComponent() {
   return (
     <UserProvider>
-      <Outlet />
+      <ImagesProvider>
+        <Outlet />
+      </ImagesProvider>
     </UserProvider>
   )
 }
